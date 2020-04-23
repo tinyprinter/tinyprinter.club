@@ -6,6 +6,7 @@ googleAnalytics = "UA-19057096-2"
 enableEmoji = true 
 copyright = "© 2020 tinyprinter.club"
 description = "Join the fake Little Printer revolution!"
+publishDir = "docs"
 
 [taxonomies]
   category = "categories"
