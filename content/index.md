@@ -33,9 +33,10 @@ Good news! You came to the right place. Just follow these ??? easy steps and you
 # What you'll need
 
 * A thermal printer, like the Paperang P1. There are a number of places where you can buy one: Amazon ([US](https://www.amazon.com/PAPERANG-Portable-Language-Wireless-Bluetooth/dp/B07TCJ2TC6/), [UK](https://www.amazon.co.uk/PAPERANG-Wireless-Mobile-Instant-Printer/dp/B078HZK2NV), [DE](https://www.amazon.de/Paperang-Mini-Drucker-Android-Ger%C3%A4te-Druckpapier-gew%C3%B6hnlich/dp/B082PWV57H/)), [Thepaperang](https://thepaperang.com/products/paperang-p1), [Paperangprint](https://paperangprint.com/collections/paperang-printers/products/paperang-p1), [Aliexpress](https://www.aliexpress.com/w/wholesale-paperang-p1.html) and so on. Don't forget to buy a few rolls of paper for it; you can find them in many colors, and sticker paper is especially fun!
+* As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind but you can skip the irrelevant bits and use the `escpos` driver in `sirius-project`.
 * Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks it will work on any computer with Bluetooth running *nix
 * Node.js 10, Yarn, Python 3.7, Docker
-* Ideally an iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality)
+* Ideally an iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality).
 
 # How does this all work?
 

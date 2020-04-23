@@ -2,7 +2,7 @@ baseURL = "https://tinyprinter.github.io/tinyprinter.club/"
 languageCode = "en-us"
 title = "tinyprinter.club"
 theme = "hugo-theme-basic"
-googleAnalytics = "UA-19057096-2"
+googleAnalytics = "UA-164348245-1"
 enableEmoji = true 
 copyright = "© 2020 tinyprinter.club"
 description = "Join the fake Little Printer revolution!"
@@ -39,3 +39,8 @@ publishDir = "docs"
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
