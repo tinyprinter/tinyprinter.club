@@ -1,3 +1,40 @@
-baseURL = "http://example.org/"
+baseURL = "https://tinyprinter.club/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "tinyprinter.club"
+theme = "hugo-theme-basic"
+googleAnalytics = "UA-19057096-2"
+enableEmoji = true 
+copyright = "© 2020 tinyprinter.club"
+description = "Join the fake Little Printer revolution!"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[params]
+  titleEmoji = ":tada:"
+  # change this!
+  twitter = "tinyprinter.club"
+
+[Permalinks]
+  post = "post/:slug"
+
+[[params.menu]]
+  name = "blog"
+  url = "post/"
+
+[[params.menu]]
+  name = "about"
+  url = "about/"
+  
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
