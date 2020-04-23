@@ -32,7 +32,7 @@ publishDir = "docs"
 
 [privacy]
   [privacy.googleAnalytics]
-    anonymizeIP = true
+    anonymizeIP = false
     respectDoNotTrack = true
     useSessionStorage = true
   [privacy.twitter]
