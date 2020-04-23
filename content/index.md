@@ -150,7 +150,8 @@ A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seem
 * [nordprojects/littleprinters-ios-app](https://github.com/nordprojects/littleprinters-ios-app) (the iOS app's code)
 * [notjosh/sirius-client](https://github.com/notjosh/sirius-client) (notjosh's universal client for `sirius` — WIP)
 * [ktamas/sirius-client](https://github.com/ktamas/sirius-client) (KTamas' fork of the client — older, but works)
-* [ktamas/python-paperang](https://github.com/ktamas/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
+* [tinyprinter/python-paperang](https://github.com/tinyprinter/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
+* [tinyprinter/tinyprinter.club](https://github.com/tinyprinter/python-paperang) This website! Feel free to add more information to it and submit a PR! It's built in [hugo](http://gohugo.io/).
 
 # Other
 
