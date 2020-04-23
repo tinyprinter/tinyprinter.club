@@ -74,7 +74,7 @@ if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	if (window.sessionStorage) {
 		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
-		ga('create', 'UA-19057096-2', {
+		ga('create', 'UA-164348245-1', {
 	    'storage': 'none',
 	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
 	   });
@@ -113,7 +113,7 @@ if (!doNotTrack) {
 
     <article itemprop="articleBody" id="content" class="w-90 lh-copy">
       <h1 id="table-of-contents">Table of Contents</h1>
-<!-- raw HTML omitted -->
+<!-- TOC -->
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#so-you-want-to-have-a-little-printer">So you want to have a Little Printer</a></li>
@@ -138,23 +138,24 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- /TOC -->
 <h1 id="so-you-want-to-have-a-little-printer">So you want to have a Little Printer</h1>
 <p>Good news! You came to the right place. Just follow these ??? easy steps and you&rsquo;ll be set up in no time* (a fair amount of time, actually.)</p>
 <h1 id="what-youll-need">What you&rsquo;ll need</h1>
 <ul>
 <li>A thermal printer, like the Paperang P1. There are a number of places where you can buy one: Amazon (<a href="https://www.amazon.com/PAPERANG-Portable-Language-Wireless-Bluetooth/dp/B07TCJ2TC6/">US</a>, <a href="https://www.amazon.co.uk/PAPERANG-Wireless-Mobile-Instant-Printer/dp/B078HZK2NV">UK</a>, <a href="https://www.amazon.de/Paperang-Mini-Drucker-Android-Ger%C3%A4te-Druckpapier-gew%C3%B6hnlich/dp/B082PWV57H/">DE</a>), <a href="https://thepaperang.com/products/paperang-p1">Thepaperang</a>, <a href="https://paperangprint.com/collections/paperang-printers/products/paperang-p1">Paperangprint</a>, <a href="https://www.aliexpress.com/w/wholesale-paperang-p1.html">Aliexpress</a> and so on. Don&rsquo;t forget to buy a few rolls of paper for it; you can find them in many colors, and sticker paper is especially fun!</li>
+<li>As an alternative, you can use any thermal printer that uses the <a href="https://en.wikipedia.org/wiki/ESC/P#Variants">ESC/POS</a> protocol. This guide was written with the Paperang in mind but you can skip the irrelevant bits and use the <code>escpos</code> driver in <code>sirius-project</code>.</li>
 <li>Ideally, a Raspberry Pi with Bluetooth, but we&rsquo;ve tested this with a Mac as well, and with some tweaks it will work on any computer with Bluetooth running *nix</li>
 <li>Node.js 10, Yarn, Python 3.7, Docker</li>
-<li>Ideally an iPhone for the <a href="https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&amp;mt=8">app</a>, but you can use the <a href="https://littleprinters.netlify.app/">web client</a> as well (with reduced functionality)</li>
+<li>Ideally an iPhone for the <a href="https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&amp;mt=8">app</a>, but you can use the <a href="https://littleprinters.netlify.app/">web client</a> as well (with reduced functionality).</li>
 </ul>
 <h1 id="how-does-this-all-work">How does this all work?</h1>
 <p>I&rsquo;m going to steal this useful graph from <a href="https://nordprojects.co/projects/littleprinters/">Nordprojects</a>:</p>
 <p><img src="how-it-works.png" alt="architecture">
-<!-- raw HTML omitted -->© Nordprojects, 2019<!-- raw HTML omitted --></p>
+<small>© Nordprojects, 2019</small></p>
 <p>The original Little Printer architecture required two devices: the printer itself, and the bridge. The printer connected to the bridge via <a href="https://en.wikipedia.org/wiki/Zigbee">Zigbee</a>, and the bridge connected to the Berg Cloud (which was replaced by the <code>sirius</code> project — see below). The Berg Cloud Bridge acted as a platform for an envisioned ecosystem of IoT devices, that never really materialized. The client (<code>sirius-client</code> — we&rsquo;ll get to that soon) acts as the bridge and has various &ldquo;drivers&rdquo; for printers.</p>
 <p><img src="how-it-works-2.png" alt="new architecture">
-<!-- raw HTML omitted -->© Nordprojects, 2019<!-- raw HTML omitted --></p>
+<small>© Nordprojects, 2019</small></p>
 <h1 id="how-to-get-started">How to get started</h1>
 <p>We&rsquo;ll assume you have your Paperang. Great! You can already use via its app on your smartphone, but that&rsquo;s not what we&rsquo;ll do.</p>
 <p>Connect your Paperang to a power source with a USB cable to prevent drain. It should also keep it turned on. You can communicate with the printer via USB but for now, we&rsquo;ll just use bluetooth.</p>
