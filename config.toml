@@ -15,8 +15,7 @@ publishDir = "docs"
 
 [params]
   titleEmoji = ":tada:"
-  # change this!
-  twitter = "tinyprinter.club"
+  twitter = "tinyprinterclub"
 
 [Permalinks]
   post = "post/:slug"

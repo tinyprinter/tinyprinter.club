@@ -27,7 +27,7 @@
     class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns"
   >
     <section id="main">
-      <div>
+      {{/*<div>
         <h1 id="title" class="f3">
           {{ .Site.Title }} {{ .Site.Params.TitleEmoji | emojify }}
         </h1>
@@ -41,6 +41,9 @@
           <!-- prettier-ignore -->
           {{ end }}
         </ul>
+      </div>*/}}
+      <div>
+        {{.Content}}
       </div>
     </section>
 
