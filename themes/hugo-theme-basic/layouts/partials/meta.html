@@ -45,6 +45,6 @@
   name="twitter:description"
   content="{{ .Description | default .Summary }}|{{ .Site.Params.Description }}"
 />
-<meta name="twitter:image:src" content="" />
+<meta name="twitter:image" content="{{ .Params.ogimage | absURL }}" />
 <meta name="twitter:domain" content="{{ .Permalink }}" />
 {{ end }}
