@@ -2,6 +2,7 @@
 title: "Index"
 date: 2020-04-23T12:46:11+02:00
 draft: false
+description: "Make your own Little Printer!"
 ---
 # Table of Contents
 
