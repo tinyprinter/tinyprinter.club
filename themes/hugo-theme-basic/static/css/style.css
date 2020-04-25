@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothings: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-family: helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif !important;
 }
 
 code {
