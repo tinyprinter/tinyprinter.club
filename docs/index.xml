@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tinyprinter.club</title>
+    <title>Index on tinyprinter.club</title>
     <link>https://tinyprinter.github.io/tinyprinter.club/</link>
-    <description>Recent content on tinyprinter.club</description>
+    <description>Recent content in Index on tinyprinter.club</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 tinyprinter.club</copyright>
@@ -11,15 +11,6 @@
     
 	<atom:link href="https://tinyprinter.github.io/tinyprinter.club/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Index</title>
-      <link>https://tinyprinter.github.io/tinyprinter.club/</link>
-      <pubDate>Thu, 23 Apr 2020 12:46:11 +0200</pubDate>
-      
-      <guid>https://tinyprinter.github.io/tinyprinter.club/</guid>
-      <description>Table of Contents  Table of Contents So you want to have a Little Printer What you&amp;rsquo;ll need How does this all work? How to get started Let&amp;rsquo;s make a (fake) printer Wiring it all up Credits FAQ What we need help with History / timeline Links  Code   Other  Misc notes ignore for now Addendum: how the whole fake printer thing works (by Josh)    So you want to have a Little Printer Good news!</description>
-    </item>
     
   </channel>
 </rss>
