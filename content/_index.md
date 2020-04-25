@@ -104,7 +104,9 @@ Get the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&
 
 # Credits
 
-[Tamas Kadar (KTamas)](https://ktamas.com/) ([email](mailto:ktamas@ktamas.com), [twitter](https://twitter.com/ktamas)), [Joshua May (notjosh)](https://notjosh.com/) ([twitter](https://twitter.com/notjosh)), Monica Farrell ([twitter](https://twitter.com/monica_farrell)). Watch the [!!Con 2020](http://bangbangcon.com/) talk ["Little Printing for Everyone!!1"](http://bangbangcon.com/speakers.html) by KTamas once it's published on YouTube. The "how does it work" image was created by [Nordprojects](https://nordprojects.co).
+First of all, follow us on twitter ([@tinyprinterclub](https://twitter.com/tinyprinterclub))!
+
+Major contributors of this project include [Tamas Kadar (KTamas)](https://ktamas.com/) ([email](mailto:ktamas@ktamas.com), [twitter](https://twitter.com/ktamas)), [Joshua May (notjosh)](https://notjosh.com/) ([twitter](https://twitter.com/notjosh)) and Monica Farrell ([twitter](https://twitter.com/monica_farrell)). Watch the [!!Con 2020](http://bangbangcon.com/) talk ["Little Printing for Everyone!!1"](http://bangbangcon.com/speakers.html#tamas-kadar) by KTamas once it's published on YouTube. The "how does it work" image was created by [Nordprojects](https://nordprojects.co).
 
 # FAQ
 
