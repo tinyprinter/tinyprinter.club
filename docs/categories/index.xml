@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on tinyprinter.club</title>
-    <link>https://tinyprinter.github.io/tinyprinter.club/categories/</link>
+    <link>https://tinyprinter.club/categories/</link>
     <description>Recent content in Categories on tinyprinter.club</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 tinyprinter.club</copyright>
     
-	<atom:link href="https://tinyprinter.github.io/tinyprinter.club/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tinyprinter.club/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
