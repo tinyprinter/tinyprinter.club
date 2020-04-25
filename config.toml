@@ -1,4 +1,4 @@
-baseURL = "https://tinyprinter.github.io/tinyprinter.club/"
+baseURL = "https://tinyprinter.club/"
 languageCode = "en-us"
 title = "tinyprinter.club"
 theme = "hugo-theme-basic"
