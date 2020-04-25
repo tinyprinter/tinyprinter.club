@@ -161,9 +161,6 @@ A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seem
 
 BERG Cloud Bridge sits by your broadband router and wirelessly connects Little Printer to the web, which makes it easy for you to place Little Printer where you can see it.
 
-British Experimental Rocket Group
-
-
 ---
 
 ## Addendum: how the whole fake printer thing works (by Josh)
