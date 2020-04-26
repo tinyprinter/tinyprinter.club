@@ -10,6 +10,7 @@ ogimage: "littleprinter_table.jpg"
 <!-- TOC -->
 
 - [Table of Contents](#table-of-contents)
+- [What is this?](#what-is-this)
 - [So you want to have a Little Printer](#so-you-want-to-have-a-little-printer)
 - [What you'll need](#what-youll-need)
 - [How does this all work?](#how-does-this-all-work)
@@ -27,6 +28,12 @@ ogimage: "littleprinter_table.jpg"
   - [Addendum: how the whole fake printer thing works (by Josh)](#addendum-how-the-whole-fake-printer-thing-works-by-josh)
 
 <!-- /TOC -->
+
+![little printer](littleprinter_table.jpg)
+
+# What is this?
+
+The Little Printer was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a minimal reimplementation of the server which was later extended by Nordprojects, along with releasing a new App, in 2019. With that, People with Little Printers could use them again after hacking their Berg Cloud Bridge. But you can't really buy a Little Printer anymore; so this page is all about making your own Little Printer.
 
 # So you want to have a Little Printer
 
@@ -144,7 +151,7 @@ A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seem
 * (December, 2015) [Updating the Bridge](https://github.com/genmon/sirius/wiki/Updating-the-Bridge)
 * (December, 2015-July, 2019) [Directing the Berg cloud bridge](https://github.com/genmon/sirius/issues/8) (long GH issue, important historical document about the "lost years")
 * (May, 2019) [Little Printer returns as an open-source messaging device](https://www.theverge.com/2019/5/19/18628287/little-printer-berg-nord-projects-app-open-source-messaging)
-* (May, 2019) [Little Printers, a friendly new messaging app and cloud platform.](https://nordprojects.co/projects/littleprinters/) (Nord Projects' announcement of the new app, working server, api, device.li etc.)
+* (May, 2019) [Little Printers, a friendly new messaging app and cloud platform.](https://nordprojects.co/projects/littleprinters/) (Nordprojects' announcement of the new app, working server, api, device.li etc.)
 
 # Links
 
