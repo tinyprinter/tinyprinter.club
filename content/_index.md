@@ -30,7 +30,7 @@ ogimage: "littleprinter_table.jpg"
 
 # What is this?
 
-The [Little Printer](https://vimeo.com/32796535) was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a [minimal reimplementation of the server](https://github.com/nordprojects/sirius) which was later [extended by Nordprojects](https://nordprojects.co/projects/littleprinters/), along with releasing a new [app](https://apps.apple.com/us/app/little-printers/id1393105914), in 2019. With that, people with Little Printers could use them again after [hacking their BERG Cloud Bridge](https://github.com/genmon/sirius/issues/26#issuecomment-378230535). You can't really buy a Little Printer anymore; this page is all about making your own.
+The [Little Printer](https://vimeo.com/32796535) was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a [minimal reimplementation of the server](https://github.com/nordprojects/sirius) which was later [extended by Nordprojects](https://nordprojects.co/projects/littleprinters/), along with releasing a new [app](https://apps.apple.com/us/app/little-printers/id1393105914), in 2019. With that, people with Little Printers could use them again after [hacking](https://github.com/genmon/sirius/issues/26#issuecomment-378230535) their [BERG Cloud Bridge](http://web.archive.org/web/20130501144818/http://bergcloud.com/help/#the-bridge). You can't really buy a Little Printer anymore; this page is all about making your own.
 
 # So you want to have a Little Printer
 
