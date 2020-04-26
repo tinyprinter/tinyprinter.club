@@ -5,11 +5,8 @@ draft: false
 description: "Make your own Little Printer!"
 ogimage: "littleprinter_table.jpg"
 ---
-# Table of Contents
-
 <!-- TOC -->
 
-- [Table of Contents](#table-of-contents)
 - [What is this?](#what-is-this)
 - [So you want to have a Little Printer](#so-you-want-to-have-a-little-printer)
 - [What you'll need](#what-youll-need)
