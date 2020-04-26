@@ -30,37 +30,37 @@ ogimage: "littleprinter_table.jpg"
 
 # What is this?
 
-The Little Printer was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a minimal reimplementation of the server which was later extended by Nordprojects, along with releasing a new App, in 2019. With that, People with Little Printers could use them again after hacking their Berg Cloud Bridge. But you can't really buy a Little Printer anymore; so this page is all about making your own Little Printer.
+The Little Printer was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a minimal reimplementation of the server which was later extended by Nordprojects, along with releasing a new App, in 2019. With that, People with Little Printers could use them again after hacking their BERG Cloud Bridge. But you can't really buy a Little Printer anymore; so this page is all about making your own Little Printer.
 
 # So you want to have a Little Printer
 
-Good news! You came to the right place. Just follow these ??? easy steps and you'll be set up in no time* (a fair amount of time, actually.)
+Good news! You came to the right place. This page (hopefully) contains all the information and tools you need for it.
 
 # What you'll need
 
 * A thermal printer, like the Paperang P1. There are a number of places where you can buy one: Amazon ([US](https://www.amazon.com/PAPERANG-Portable-Language-Wireless-Bluetooth/dp/B07TCJ2TC6/), [UK](https://www.amazon.co.uk/PAPERANG-Wireless-Mobile-Instant-Printer/dp/B078HZK2NV), [DE](https://www.amazon.de/Paperang-Mini-Drucker-Android-Ger%C3%A4te-Druckpapier-gew%C3%B6hnlich/dp/B082PWV57H/)), [Thepaperang](https://thepaperang.com/products/paperang-p1), [Paperangprint](https://paperangprint.com/collections/paperang-printers/products/paperang-p1), [Aliexpress](https://www.aliexpress.com/w/wholesale-paperang-p1.html) and so on. Don't forget to buy a few rolls of paper for it; you can find them in many colors, and sticker paper is especially fun!
-* As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind but you can skip the irrelevant bits and use the `escpos` driver in `sirius-project`.
-* Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks it will work on any computer with Bluetooth running *nix
-* Node.js 10, Yarn, Python 3.7, Docker
-* Ideally an iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality).
+* As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind but you can skip the irrelevant bits and use the `escpos` driver in [`sirius-client`](https://github.com/ktamas/sirius-client).
+* Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks it will work on any computer with Bluetooth running *nix.
+* Node.js 10, Yarn, Python 3.7.
+* An iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality).
 
 # How does this all work?
 
-I'm going to steal this useful graph from [Nordprojects](https://nordprojects.co/projects/littleprinters/):
+I'm going to use this useful graph from [Nordprojects](https://nordprojects.co/projects/littleprinters/):
 
 ![architecture](how-it-works.png)
 <small>© Nordprojects, 2019</small>
 
-The original Little Printer architecture required two devices: the printer itself, and the bridge. The printer connected to the bridge via [Zigbee](https://en.wikipedia.org/wiki/Zigbee), and the bridge connected to the Berg Cloud (which was replaced by the `sirius` project — see below). The Berg Cloud Bridge acted as a platform for an envisioned ecosystem of IoT devices, that never really materialized. The client (`sirius-client` — we'll get to that soon) acts as the bridge and has various "drivers" for printers.
+The original Little Printer architecture required two devices: the printer itself, and the bridge. The printer connected to the bridge via [Zigbee](https://en.wikipedia.org/wiki/Zigbee), and the bridge connected to the BERG Cloud (which was replaced by the [`sirius`](https://github.com/nordprojects/sirus) project — see below). The BERG Cloud Bridge acted as a platform for an envisioned ecosystem of IoT devices, that never really materialized. The client ([`sirius-client`](https://github.com/ktamas/sirius-client) — we'll get to that soon) acts as the bridge and has various "drivers" for printers.
 
 ![new architecture](how-it-works-2.png)
 <small>© Nordprojects, 2019</small>
 
 # How to get started
 
-We'll assume you have your Paperang. Great! You can already use via its app on your smartphone, but that's not what we'll do.
+We'll assume you have your Paperang. Great! You can already use via its app on your smartphone, but that's not what we'll do, at least, not for the most of this. One thing you should do before we start: open up the app, click the three dots on the top right corner, select your Paperang and under "Automatic Shutdown Settings", set it to "Non-automatic close". That will prevent it for going to sleep.
 
-Connect your Paperang to a power source with a USB cable to prevent drain. It should also keep it turned on. You can communicate with the printer via USB but for now, we'll just use bluetooth.
+Connect your Paperang to a power source with a USB cable to prevent drain. You can communicate with the printer via USB but for now, we'll just use Bluetooth.
 
 Pair your Paperang with your computer over Bluetooth and make sure you have Node 10, Python 3.7 and Docker installed.
 
@@ -68,13 +68,17 @@ Pair your Paperang with your computer over Bluetooth and make sure you have Node
 
 This project is predicated on us prentending to be a Little Printer, so let's do that.
 
-The easy way is visiting [this website](https://little-printer-claim-code.netlify.app/) that generates the required `*.printer` file for you.
+First, visit [this website](https://little-printer-claim-code.netlify.app/) that generates the required `*.printer` file for you. Download it and guard it with your life; this is your printer now.
 
-The hard way is cloning the [`nordprojects/sirius`](https://github.com/nordprojects/sirius) repository from github, running `docker-compose -f docker-compose.yml -f docker-compose.db.yml -f docker-compose.development.yml up --build -d`, waiting for it to build, sshing into it (`docker-compose exec sirius bash`) and running `./manage.py fake printer`, which gives you the same result.
+<details>
+<summary>(There is also a more complicated way of doing it)</summary>
 
-I recommend the easy way.
+The hard way of generating a new fake printer is cloning the [`nordprojects/sirius`](https://github.com/nordprojects/sirius) repository from github, running `docker-compose -f docker-compose.yml -f docker-compose.db.yml -f docker-compose.development.yml up --build -d`, waiting for it to build, sshing into it (`docker-compose exec sirius bash`) and running `./manage.py fake printer`, which gives you the same result.
 
-In the end, you have a file that looks like this:
+I highly recommend the first method.
+</details>
+
+The printer file looks like this:
 
 ```
      address: db708b77ae2ee5b5
@@ -82,11 +86,9 @@ In the end, you have a file that looks like this:
   claim code: fojy-q4xv-7pe2-xt00
 ```
 
-Save it and guard it with your life; this is your printer now.
+Next, we're going to claim the printer on [Nordprojects' `sirius` instance](https://littleprinter.nordprojects.co/). Sign in there with Twitter, and click "Claim a printer". Enter the claim code you have and give it a name, then hit "Claim Printer".
 
-Next, we're going to claim the printer on the nord-sirious instance. Go to [https://littleprinter.nordprojects.co/](https://littleprinter.nordprojects.co/), sign in with Twitter, and click "Claim a printer". Enter the claim code you have and give it a name, then hit "Claim Printer".
-
-Congratulations, you now have a fake Little Printer! Save the [`device.li`](https://device.li) address, you'll need it later to add the printer to the (web)app.
+Congratulations, you now have a fake Little Printer! Save the [`device.li`](https://device.li) address, you'll need it later to add the printer to the ([web](https://littleprinters.netlify.app/))[app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), or giving it to a friend.
 
 # Wiring it all up
 
@@ -121,10 +123,13 @@ A: Because it's fun.
 A: Of course you can! `sirius-client` already has a generic `escpos` driver, which lets you connect a wide variety of thermal printers that use the ESC/POS protocol. It also has a simple console driver, that simply show the image your printer would print. There is nothing stopping you from making your own driver to your favorite printer of choice.
 
 **Q: What about the other Paperang models (P2, P2S)?**  
-A: They will work... sort of. The thing about them is they print at a higher resolution. The P1 has the exact same resolution as the original Little Printer, and the server sends pixel-perfect bitmaps to the client, hence this is not a problem with that. With the newer models, you either have to add support to the server to make higher-resolution images or resize the images on the client-side.
+A: We **think** they *should* work, but we have not tested them yet. Assuming they do, there is another caveat: they print at a higher resolution. The P1 has the exact same resolution as the original Little Printer, and the server sends pixel-perfect bitmaps — for now — to the client, hence this is not a problem with that. There are plans to modify the server so it supports more resolutions; you're very welcome to contribute.
 
 **Q: Where can I get a real Little Printer?**  
 A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seems like noone wants to sell theirs.
+
+**Q: What if I have a real Little Printer and I want it to connect to the new network?**
+A: [This long thread on Github](https://github.com/genmon/sirius/issues/26) should have all the information you need. You'll have to flash your BERG Cloud Bridge. Unfortuately, it has a hardware bug: there is about a 1-in-100 chance you will brick it when you flash it. Not much can be done about that.
 
 # What we need help with
 
@@ -132,21 +137,22 @@ A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seem
 * Porting `python-paperang` to Typescript and/or improving communcation between that and `sirius-client`
 * Building lots of cool services
 * Checking out Paperang clones, see if they work with the library or not
+* Building an Android version of the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8) ([source code](https://github.com/nordprojects/littleprinters-ios-app))
 
 # History / timeline
 
 * (November, 2011) [Hello Little Printer, available 2012](https://vimeo.com/32796535) (Product announcement link)
 * (March, 2012) [Little Printer homepage](http://web.archive.org/web/20120301003906/http://bergcloud.com/littleprinter/)
-* (May, 2014) [Berg Cloud shop](http://web.archive.org/web/20140529015642/http://uk-shop.bergcloud.com/) 
+* (May, 2014) [BERG Cloud shop](http://web.archive.org/web/20140529015642/http://uk-shop.bergcloud.com/) 
 * (July, 2014) [Little Printer homepage](http://web.archive.org/web/20140722111616/http://littleprinter.com/)
-* (September, 2014) [Week 483](http://web.archive.org/web/20151019041519/http://blog.bergcloud.com/2014/09/09/week-483/) (Berg is shutting down)
+* (September, 2014) [Week 483](http://web.archive.org/web/20151019041519/http://blog.bergcloud.com/2014/09/09/week-483/) (BERG is shutting down)
 * (September, 2014) [The future of Little Printer](http://web.archive.org/web/20150207025053/http://littleprinterblog.tumblr.com/post/97047976103/the-future-of-little-printer)
-* (March, 2015) [Trying something](http://web.archive.org/web/20151025093243/http://littleprinterblog.tumblr.com/post/112431535978/trying-something) (Announcing `sirius`, the new backend for the Berg Cloud Bridge)
+* (March, 2015) [Trying something](http://web.archive.org/web/20151025093243/http://littleprinterblog.tumblr.com/post/112431535978/trying-something) (Announcing `sirius`, the new backend for the BERG Cloud Bridge)
 * (March, 2015) [genmon/sirius](https://github.com/genmon/sirius)
 * (March, 2015) [A little longer](http://web.archive.org/web/20151025164214/http://littleprinterblog.tumblr.com/post/115018012993/a-little-longer) (Keeping the servers running for a few more months)
 * (December, 2015) [End of 2015](http://web.archive.org/web/20151025164214/http://littleprinterblog.tumblr.com/post/115018012993/a-little-longer) (People working on Sirius, Bridge can be updated to use it)
 * (December, 2015) [Updating the Bridge](https://github.com/genmon/sirius/wiki/Updating-the-Bridge)
-* (December, 2015-July, 2019) [Directing the Berg cloud bridge](https://github.com/genmon/sirius/issues/8) (long GH issue, important historical document about the "lost years")
+* (December, 2015-July, 2019) [Directing the BERG cloud bridge](https://github.com/genmon/sirius/issues/8) (long GH issue, important historical document about the "lost years")
 * (May, 2019) [Little Printer returns as an open-source messaging device](https://www.theverge.com/2019/5/19/18628287/little-printer-berg-nord-projects-app-open-source-messaging)
 * (May, 2019) [Little Printers, a friendly new messaging app and cloud platform.](https://nordprojects.co/projects/littleprinters/) (Nordprojects' announcement of the new app, working server, api, device.li etc.)
 
