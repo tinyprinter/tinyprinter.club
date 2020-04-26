@@ -237,8 +237,7 @@ Sso that is "a printer", essentially. but what do we do with that? ... well! Whe
     bridge_address: 'redacted',
   }
 ```
-So at that point, the server knows about that bridge, and now it knows the printer on that bridge. That's all the client does. on to the server claim code! Tong story short, it mostly lives here:
-https://github.com/nordprojects/sirius/blob/master/sirius/coding/claiming.py. So when you type a claim code into the website, it gets unpacked to find the bridge ID and the device ID: https://github.com/nordprojects/sirius/blob/master/sirius/coding/claiming.py#L70-L89 and then it associates that device to your account. voila! THE GOOD NEWS IS that in searching for that, I found an actually documented summary of what claim codes are: https://github.com/nordprojects/sirius#claim-codes.
+So at that point, the server knows about that bridge, and now it knows the printer on that bridge. That's all the client does. on to the server claim code! Tong story short, it mostly [lives here](https://github.com/nordprojects/sirius/blob/master/sirius/coding/claiming.py). So when you type a claim code into the website, [it gets unpacked to find the bridge ID and the device ID](https://github.com/nordprojects/sirius/blob/master/sirius/coding/claiming.py#L70-L89) and then it associates that device to your account. voila! THE GOOD NEWS IS that in searching for that, I found [an actually documented summary of what claim codes are](https://github.com/nordprojects/sirius#claim-codes).
 
 KTamas: and after all this, it appears permanently on device.li?
 
