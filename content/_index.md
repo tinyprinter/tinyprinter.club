@@ -129,7 +129,7 @@ A: We **think** they *should* work, but we have not tested them yet. Assuming th
 A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seems like noone wants to sell theirs.
 
 **Q: What if I have a real Little Printer and I want it to connect to the new network?**
-A: [This long thread on Github](https://github.com/genmon/sirius/issues/26) should have all the information you need. You'll have to flash your BERG Cloud Bridge. Unfortuately, it has a hardware bug: there is about a 1-in-100 chance you will brick it when you flash it. Not much can be done about that.
+A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN05EFQGYpLG5ijl5KRI/edit) should have all the information you need. You'll have to flash your BERG Cloud Bridge. Unfortuately, it has a hardware bug: there is about a 1-in-100 chance you will brick it when you flash it. Not much can be done about that.
 
 # What we need help with
 
