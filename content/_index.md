@@ -20,6 +20,7 @@ ogimage: "littleprinter_table.jpg"
 - [History / timeline](#history--timeline)
 - [Links](#links)
   - [Code](#code)
+  - [Discussion/community](#discussioncommunity)
 - [Other](#other)
   - [Misc notes ignore for now](#misc-notes-ignore-for-now)
   - [Addendum: how the whole fake printer thing works (by Josh)](#addendum-how-the-whole-fake-printer-thing-works-by-josh)
@@ -166,6 +167,10 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 * [ktamas/sirius-client](https://github.com/ktamas/sirius-client) (KTamas' fork of the client — older, but works)
 * [tinyprinter/python-paperang](https://github.com/tinyprinter/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
 * [tinyprinter/tinyprinter.club](https://github.com/tinyprinter/python-paperang) This website! Feel free to add more information to it and submit a PR! It's built in [hugo](http://gohugo.io/).
+
+## Discussion/community
+
+* Check out [this GitHub issue](https://github.com/genmon/sirius/issues/26)
 
 # Other
 
