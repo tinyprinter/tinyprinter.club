@@ -31,7 +31,7 @@ ogimage: "littleprinter_table.jpg"
 
 # What is this?
 
-The [Little Printer](https://vimeo.com/32796535) was a cute internet-connected thermal printer relased in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a [minimal reimplementation of the server](https://github.com/nordprojects/sirius) which was later [extended by Nordprojects](https://nordprojects.co/projects/littleprinters/), along with releasing a new [app](https://apps.apple.com/us/app/little-printers/id1393105914), in 2019. With that, people with Little Printers could use them again after [hacking](https://github.com/genmon/sirius/issues/26#issuecomment-378230535) their [BERG Cloud Bridge](http://web.archive.org/web/20130501144818/http://bergcloud.com/help/#the-bridge). You can't really buy a Little Printer anymore; this page is all about making your own.
+The [Little Printer](https://vimeo.com/32796535) was a cute internet-connected thermal printer released in 2012 by BERG. The company shut down in late 2014, and so did the servers at the end of 2015. They open-sourced a [minimal reimplementation of the server](https://github.com/nordprojects/sirius), which was later [extended by Nordprojects](https://nordprojects.co/projects/littleprinters/), along with releasing a new [app](https://apps.apple.com/us/app/little-printers/id1393105914), in 2019. With that, people with Little Printers could use them again after [hacking](https://github.com/genmon/sirius/issues/26#issuecomment-378230535) their [BERG Cloud Bridge](http://web.archive.org/web/20130501144818/http://bergcloud.com/help/#the-bridge). You can't really buy a Little Printer anymore; this page is all about making your own.
 
 # So you want to have a Little Printer
 
@@ -39,9 +39,9 @@ Good news! You came to the right place. This page (hopefully) contains all the i
 
 # What you'll need
 
-* A thermal printer, like the Paperang P1. There are a number of places where you can buy one: Amazon ([US](https://www.amazon.com/PAPERANG-Portable-Language-Wireless-Bluetooth/dp/B07TCJ2TC6/), [UK](https://www.amazon.co.uk/PAPERANG-Wireless-Mobile-Instant-Printer/dp/B078HZK2NV), [DE](https://www.amazon.de/Paperang-Mini-Drucker-Android-Ger%C3%A4te-Druckpapier-gew%C3%B6hnlich/dp/B082PWV57H/)), [Thepaperang](https://thepaperang.com/products/paperang-p1), [Paperangprint](https://paperangprint.com/collections/paperang-printers/products/paperang-p1), [Aliexpress](https://www.aliexpress.com/w/wholesale-paperang-p1.html) and so on. Don't forget to buy a few rolls of paper for it; you can find them in many colors, and sticker paper is especially fun!
-* As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind but you can skip the irrelevant bits and use the `escpos` driver in [`sirius-client`](https://github.com/ktamas/sirius-client).
-* Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks it will work on any computer with Bluetooth running *nix.
+* A thermal printer, like the Paperang P1. There are several places where you can buy one: Amazon ([US](https://www.amazon.com/PAPERANG-Portable-Language-Wireless-Bluetooth/dp/B07TCJ2TC6/), [UK](https://www.amazon.co.uk/PAPERANG-Wireless-Mobile-Instant-Printer/dp/B078HZK2NV), [DE](https://www.amazon.de/Paperang-Mini-Drucker-Android-Ger%C3%A4te-Druckpapier-gew%C3%B6hnlich/dp/B082PWV57H/)), [Thepaperang](https://thepaperang.com/products/paperang-p1), [Paperangprint](https://paperangprint.com/collections/paperang-printers/products/paperang-p1), [Aliexpress](https://www.aliexpress.com/w/wholesale-paperang-p1.html) and so on. Don't forget to buy a few rolls of paper for it; you can find them in many colors, and sticker paper is especially fun!
+* As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind, but you can skip the irrelevant bits and use the `escpos` driver in [`sirius-client`](https://github.com/ktamas/sirius-client).
+* Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks, it should work on any computer with Bluetooth running *nix.
 * Node.js 10, Yarn, Python 3.7.
 * An iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality).
 
@@ -59,15 +59,17 @@ The original Little Printer architecture required two devices: the printer itsel
 
 # How to get started
 
-We'll assume you have your Paperang. Great! You can already use via its app on your smartphone, but that's not what we'll do, at least, not for the most of this. One thing you should do before we start: open up the app, click the three dots on the top right corner, select your Paperang and under "Automatic Shutdown Settings", set it to "Non-automatic close". That will prevent it for going to sleep.
+(If you have an ESC/POS-compatible thermal printer or you don't have a printer yet: create a fake printer below then jump to the FAQ.)
 
-Connect your Paperang to a power source with a USB cable to prevent drain. You can communicate with the printer via USB but for now, we'll just use Bluetooth.
+We'll assume you have a Paperang P1. Great! You can already use it via its app on your smartphone, but that's not what we'll do, at least, not for the most of this. One thing you should do before we start: open up the app, click the three dots on the top right corner, select your Paperang and under "Automatic Shutdown Settings", set it to "Non-automatic close". This prevents it from going to sleep.
+
+Connect your Paperang to a power source with a USB cable to prevent drain. You can communicate with the printer via USB, but for now, we'll just use Bluetooth.
 
 Pair your Paperang with your computer over Bluetooth and make sure you have Node 10, Python 3.7 and Docker installed.
 
 # Let's make a (fake) printer
 
-This project is predicated on us prentending to be a Little Printer, so let's do that.
+This project is predicated on us pretending to be a Little Printer, so let's do that.
 
 First, visit [this website](https://little-printer-claim-code.netlify.app/) that generates the required `*.printer` file for you. Download it and guard it with your life; this is your printer now.
 
@@ -95,7 +97,7 @@ Congratulations, you now have a fake Little Printer! Save the [`device.li`](http
 
 Next, we'll put it all together, connecting our Paperang to the network. For that, we use two projects: [sirius-client](https://github.com/ktamas/sirius-client) and [python-paperang](https://github.com/ktamas/python-paperang). They should really be merged into one. One day.
 
-Anyways, clone both of them from Github, and we'll start with some testing with the latter project. We're going to assume you have at least a passing understanding of both Python and Typescript.
+Anyways, clone both of them from Github, and we'll start testing things first with the latter project. We're going to assume you have at least a passing understanding of both Python and Typescript.
 
 If you're on Linux, and we'll assume Debian, you'll need the following packages installed: `libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python-llvmlite llvm-dev`.
 
@@ -113,7 +115,7 @@ Get the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&
 
 First of all, follow us on twitter ([@tinyprinterclub](https://twitter.com/tinyprinterclub))!
 
-Major contributors of this project include [Tamas Kadar (KTamas)](https://ktamas.com/) ([email](mailto:ktamas@ktamas.com), [twitter](https://twitter.com/ktamas)), [Joshua May (notjosh)](https://notjosh.com/) ([twitter](https://twitter.com/notjosh)) and Monica Farrell ([twitter](https://twitter.com/monica_farrell)). Watch the [!!Con 2020](http://bangbangcon.com/) talk ["Little Printing for Everyone!!1"](http://bangbangcon.com/speakers.html#tamas-kadar) by KTamas once it's published on YouTube. The "how does it work" image was created by [Nordprojects](https://nordprojects.co).
+Major contributors to this project include [Tamas Kadar (KTamas)](https://ktamas.com/) ([email](mailto:ktamas@ktamas.com), [twitter](https://twitter.com/ktamas)), [Joshua May (notjosh)](https://notjosh.com/) ([twitter](https://twitter.com/notjosh)) and Monica Farrell ([twitter](https://twitter.com/monica_farrell)). Watch the [!!Con 2020](http://bangbangcon.com/) talk ["Little Printing for Everyone!!1"](http://bangbangcon.com/speakers.html#tamas-kadar) by KTamas once it's published on YouTube. The "how does it work" image was created by [Nordprojects](https://nordprojects.co).
 
 # FAQ
 
@@ -121,7 +123,7 @@ Major contributors of this project include [Tamas Kadar (KTamas)](https://ktamas
 A: Because it's fun.
 
 **Q: Do I need a Paperang P1, specifically? Can't I just use something else?**  
-A: Of course you can! `sirius-client` already has a generic `escpos` driver, which lets you connect a wide variety of thermal printers that use the ESC/POS protocol. It also has a simple console driver, that simply show the image your printer would print. There is nothing stopping you from making your own driver to your favorite printer of choice.
+A: Of course you can! `sirius-client` already has a generic `escpos` driver, which lets you connect a wide variety of thermal printers that use the ESC/POS protocol. It also has a simple console driver, that simply shows the image your printer would print. There is nothing stopping you from making your own driver to your favorite printer of choice.
 
 **Q: What about the other Paperang models (P2, P2S)?**  
 A: We **think** they *should* work, but we have not tested them yet. Assuming they do, there is another caveat: they print at a higher resolution. The P1 has the exact same resolution as the original Little Printer, and the server sends pixel-perfect bitmaps — for now — to the client, hence this is not a problem with that. There are plans to modify the server so it supports more resolutions; you're very welcome to contribute.
@@ -130,15 +132,16 @@ A: We **think** they *should* work, but we have not tested them yet. Assuming th
 A: I mean, eBay, if you're lucky. I've been looking for a while now, and it seems like noone wants to sell theirs.
 
 **Q: What if I have a real Little Printer and I want it to connect to the new network?**
-A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN05EFQGYpLG5ijl5KRI/edit) should have all the information you need. You'll have to flash your BERG Cloud Bridge. Unfortuately, it has a hardware bug: there is about a 1-in-100 chance you will brick it when you flash it. Not much can be done about that.
+A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN05EFQGYpLG5ijl5KRI/edit) should have all the information you need. You'll have to flash your BERG Cloud Bridge. Unfortunately, it has a hardware bug: there is about a 1-in-100 chance you will brick it when you flash it. Not much can be done about that.
 
 # What we need help with
 
 * Reviewing PRs for `sirius`, merging headless chrome
-* Porting `python-paperang` to Typescript and/or improving communcation between that and `sirius-client`
+* Porting `python-paperang` to Typescript and/or improving communication between that and `sirius-client`
 * Building lots of cool services
 * Checking out Paperang clones, see if they work with the library or not
 * Building an Android version of the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8) ([source code](https://github.com/nordprojects/littleprinters-ios-app))
+* ...and so much more
 
 # History / timeline
 
@@ -166,7 +169,7 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 * [notjosh/sirius-client](https://github.com/notjosh/sirius-client) (notjosh's universal client for `sirius` — WIP)
 * [ktamas/sirius-client](https://github.com/ktamas/sirius-client) (KTamas' fork of the client — older, but works)
 * [tinyprinter/python-paperang](https://github.com/tinyprinter/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
-* [tinyprinter/tinyprinter.club](https://github.com/tinyprinter/python-paperang) This website! Feel free to add more information to it and submit a PR! It's built in [hugo](http://gohugo.io/).
+* [tinyprinter/tinyprinter.club](https://github.com/tinyprinter/python-paperang) This website! Feel free to add more information to it and submit a PR! It's built with [hugo](http://gohugo.io/).
 
 ## Discussion/community
 
