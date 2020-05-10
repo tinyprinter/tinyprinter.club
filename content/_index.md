@@ -43,7 +43,7 @@ Good news! You came to the right place. This page (hopefully) contains all the i
 * As an alternative, you can use any thermal printer that uses the [ESC/POS](https://en.wikipedia.org/wiki/ESC/P#Variants) protocol. This guide was written with the Paperang in mind, but you can skip the irrelevant bits and use the `escpos` driver in [`sirius-client`](https://github.com/ktamas/sirius-client).
 * Ideally, a Raspberry Pi with Bluetooth, but we've tested this with a Mac as well, and with some tweaks, it should work on any computer with Bluetooth running *nix.
 * Node.js 10, Yarn, Python 3.7, Docker.
-* An iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.netlify.app/) as well (with reduced functionality).
+* An iPhone for the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8), but you can use the [web client](https://littleprinters.ink/) as well (with reduced functionality).
 
 # How does this all work?
 
@@ -166,6 +166,7 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 
 * [nordprojects/sirius](https://github.com/nordprojects/sirius) (the server's code)
 * [nordprojects/littleprinters-ios-app](https://github.com/nordprojects/littleprinters-ios-app) (the iOS app's code)
+* [andrewn/littleprinters-web](https://github.com/andrewn/littleprinters-web) (port of iOS app to the web)
 * [notjosh/sirius-client](https://github.com/notjosh/sirius-client) (notjosh's universal client for `sirius` — WIP)
 * [ktamas/sirius-client](https://github.com/ktamas/sirius-client) (KTamas' fork of the client — older, but works)
 * [tinyprinter/python-paperang](https://github.com/tinyprinter/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
