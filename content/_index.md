@@ -107,7 +107,7 @@ Next, let's get `sirius-client` working. Install ts-node globally (`npm install 
 
 Now run both projects (`python3 littlepriter.py` and `ts-node bin/client.ts`), and you're ready to print something!
 
-Go back to [Nordprojects' `sirius` instance](https://littleprinter.nordprojects.co/), you now have a fake Little Printer! Save the [`device.li`](https://device.li) address, you'll need it.
+Go back to [Nordprojects' `sirius` instance](https://littleprinter.nordprojects.co/), and your fake little printer should show up. If not, claim it again, and then it will work. Save the [`device.li`](https://device.li) address, you'll need it.
 
 Get the [app](https://itunes.apple.com/us/app/little-printers/id1393105914?ls=1&mt=8) (or use the [web client](https://littleprinters.netlify.app/)), add a printer via its `device.li` address, and print something! Or use the API. Go wild.
 
