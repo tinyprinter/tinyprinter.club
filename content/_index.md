@@ -80,7 +80,7 @@ This project is predicated on us pretending to be a Little Printer, so let's do 
  - `docker-compose exec sirius bash`
  - `./manage.py fake printer`
 
-If you run into any errors, take a look at the [troubleshooting steps](sirius-server-troubleshoot) for the Sirius server. 
+If you run into any errors, take a look at the [troubleshooting steps](sirius-server-troubleshoot) for the `sirius` server. 
 
 Save the generated printer file, which looks something like this:
 
