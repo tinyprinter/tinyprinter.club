@@ -101,7 +101,7 @@ Anyways, clone both of them from Github, and we'll start testing things first wi
 
 If you're on Linux, and we'll assume Debian, you'll need the following packages installed: `libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python-llvmlite llvm-dev`.
 
-Create a `config.py` based on `config.example.py`. If you don't have the MAC address of your paperang, that's fine; just use an empty string and the code will find it. Set a temp directory that's writeable by both projects.
+Create a `config.py` based on `config.example.py`. If you don't have the MAC address of your paperang, that's fine; just use an empty string and the code will find it. 
 
 Run `printer.py` to print a self-test. If you did everything well, you should have a bunch of infos printed on your Paperang! You can also edit this file to print any arbitrary image, processed with the famous [Atkinson dithering algorithm](https://en.wikipedia.org/wiki/Dither#Algorithms).
 
