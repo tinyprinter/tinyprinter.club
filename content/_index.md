@@ -99,7 +99,9 @@ Next, we'll put it all together, connecting our Paperang to the network. For tha
 
 Anyways, clone both of them from Github, and we'll start testing things first with the latter project. We're going to assume you have at least a passing understanding of both Python and Typescript.
 
-If you're on Linux, and we'll assume Debian, you'll need the following packages installed: `libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python-llvmlite llvm-dev`.
+If you're on Linux, and we'll assume Debian, you'll need the following packages installed: `libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python3-skimage python-llvmlite llvm-dev cython3 python3-skimage`.
+
+Install the requirements: `pip3 install -r requirements.txt`.
 
 Create a `config.py` based on `config.example.py`. If you don't have the MAC address of your paperang, that's fine; just use an empty string and the code will find it. 
 
