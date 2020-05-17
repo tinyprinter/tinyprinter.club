@@ -100,7 +100,8 @@ Next, we'll put it all together, connecting our Paperang to the network. For tha
 
 Anyways, clone both of them from Github, and we'll start testing things first with the latter project. We're going to assume you have at least a passing understanding of both Python and Typescript.
 
-If you're on Linux, and we'll assume Debian, you'll need the following packages installed: `libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python3-skimage python-llvmlite llvm-dev cython3 python3-skimage`.
+# Setting up python-paperang
+If you're on Linux, and we'll assume Debian (or Raspbian), you'll need the following packages installed: `build-essential libbluetooth-dev libhidapi-dev libatlas-base-dev python3-llvmlite python3-numba python3-skimage python-llvmlite llvm-dev cython3 python3-skimage`.
 
 Install the requirements: `pip3 install -r requirements.txt`.
 
@@ -108,9 +109,25 @@ Create a `config.py` based on `config.example.py`. If you don't have the MAC add
 
 Run `printer.py` to print a self-test. If you did everything well, you should have a bunch of infos printed on your Paperang! You can also edit this file to print any arbitrary image, processed with the famous [Atkinson dithering algorithm](https://en.wikipedia.org/wiki/Dither#Algorithms).
 
-Next, let's get `sirius-client` working. Install ts-node globally (`npm install -g ts-node`), then do a `yarn install`. Put your printer file into the `fixtures` folder, then edit `bin/client.ts` and point `printerDataPath` to it. Edit `src/device/printer/filesystem-printer.ts` and update it with the temp directory we use for communication that you created two paragraphs before.
+# Setting up sirius-client
+Next, let's get `sirius-client` working.
 
-Now run both projects (`python3 littlepriter.py` and `ts-node bin/client.ts`), and you're ready to print something!
+You'll need npm and ts-node installed; to do that on Debian/Raspbian, run the following:
+```sudo apt-get install npm
+sudo npm install -g ts-node
+```
+
+You'll also need to install yarn if you don't already have it.
+On Debian, you should follow [yarn's specific install instructions](https://classic.yarnpkg.com/en/docs/install#debian-stable). Come back here when you're done.
+
+Now run `yarn install`.
+
+Time to run sirius-client! add the path to the printer file you generated as a command-line argument:
+```
+yarn ts-node bin/client.ts run --uri wss://littleprinter.nordprojects.co/api/v1/connection -p ~/my-printer.printer -d filesystem
+```
+
+Now run python-paperang with `python3 littleprinter.py`, and you're ready to print something!
 
 Go back to [Nordprojects' `sirius` instance](https://littleprinter.nordprojects.co/), and your fake little printer should show up. If not, claim it again, and then it will work. Save the [`device.li`](https://device.li) address, you'll need it.
 
