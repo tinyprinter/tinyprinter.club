@@ -71,8 +71,8 @@ Pair your Paperang with your computer over Bluetooth and make sure you have Node
 
 This project is predicated on us pretending to be a Little Printer, so let's do that.
 
-<!--First, visit [this website](https://little-printer-claim-code.netlify.app/) that generates the required `*.printer` file for you. Download it and guard it with your life; this is your printer now. -->
-
+First, visit [this website](https://little-printer-claim-code.netlify.app/) that generates the required `*.printer` file for you. Download it and guard it with your life; this is your printer now.
+<!--
  - Clone the [`nordprojects/sirius`](https://github.com/nordprojects/sirius) repository from github
  - `cp .env.example .env`
  - edit `.env` and add `DATABASE_URL=postgresql://postgres:plop@sirius-database/sirius`
@@ -81,8 +81,9 @@ This project is predicated on us pretending to be a Little Printer, so let's do 
  - `./manage.py fake printer`
 
 If you run into any errors, take a look at the [troubleshooting steps](sirius-server-troubleshoot) for the `sirius` server. 
+-->
 
-Save the generated printer file, which looks something like this:
+The generated printer file will look something like this:
 
 ```
      address: db708b77ae2ee5b5
