@@ -204,7 +204,7 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 
 ## Code of Conduct
 
-* You can find our CoC [here](CODE_OF_CONDUCT).
+* You can find our CoC [here](code-of-conduct).
 
 # Other
 
