@@ -16,6 +16,17 @@ ogimage: "littleprinter_table.jpg"
 - [Wiring it all up](#wiring-it-all-up)
 - [Setting up python-paperang](#setting-up-python-paperang)
 - [Setting up sirius-client](#setting-up-sirius-client)
+- [Credits](#credits)
+- [FAQ](#faq)
+- [What we need help with](#what-we-need-help-with)
+- [History / timeline](#history--timeline)
+- [Links](#links)
+    - [Code](#code)
+    - [Discussion/community](#discussioncommunity)
+    - [Code of Conduct](#code-of-conduct)
+- [Other](#other)
+    - [Misc notes ignore for now](#misc-notes-ignore-for-now)
+    - [Addendum: how the whole fake printer thing works (by Josh)](#addendum-how-the-whole-fake-printer-thing-works-by-josh)
 
 <!-- /TOC -->
 
@@ -102,6 +113,7 @@ Create a `config.py` based on `config.example.py`. If you don't have the MAC add
 Run `printer.py` to print a self-test. If you did everything well, you should have a bunch of infos printed on your Paperang! You can also edit this file to print any arbitrary image, processed with the famous [Atkinson dithering algorithm](https://en.wikipedia.org/wiki/Dither#Algorithms).
 
 # Setting up sirius-client
+
 Next, let's get `sirius-client` working.
 
 You'll need npm and ts-node installed; to do that on Debian/Raspbian, run the following:
