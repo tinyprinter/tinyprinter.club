@@ -21,12 +21,12 @@ ogimage: "littleprinter_table.jpg"
 - [What we need help with](#what-we-need-help-with)
 - [History / timeline](#history--timeline)
 - [Links](#links)
-    - [Code](#code)
-    - [Discussion/community](#discussioncommunity)
-    - [Code of Conduct](#code-of-conduct)
+  - [Code](#code)
+  - [Discussion/community](#discussioncommunity)
+  - [Code of Conduct](#code-of-conduct)
 - [Other](#other)
-    - [Misc notes ignore for now](#misc-notes-ignore-for-now)
-    - [Addendum: how the whole fake printer thing works (by Josh)](#addendum-how-the-whole-fake-printer-thing-works-by-josh)
+  - [Misc notes ignore for now](#misc-notes-ignore-for-now)
+  - [Addendum: how the whole fake printer thing works (by Josh)](#addendum-how-the-whole-fake-printer-thing-works-by-josh)
 
 <!-- /TOC -->
 
@@ -38,7 +38,7 @@ The [Little Printer](https://vimeo.com/32796535) was a cute internet-connected t
 
 # So you want to have a Little Printer
 
-Good news! You came to the right place. This page (hopefully) contains all the information and tools you need for it. **But first: [join our Discord!](https://discord.gg/4XCcNRb)** It's where all the development happens, and where you can get help if you get stuck with something.
+Good news! You came to the right place. This page (hopefully) contains all the information and tools you need for it. **But first: [join our Discord!](https://discord.gg/cKagPkjcCS)** It's where all the development happens, and where you can get help if you get stuck with something.
 
 # What you'll need
 
@@ -200,7 +200,7 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 
 ## Discussion/community
 
-* [Join our Discord!](https://discord.gg/4XCcNRb)
+* [Join our Discord!](https://discord.gg/cKagPkjcCS)
 * Check out [this GitHub issue](https://github.com/genmon/sirius/issues/26) for past discussions.
 
 ## Code of Conduct
