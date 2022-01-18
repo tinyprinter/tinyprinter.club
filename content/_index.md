@@ -196,6 +196,7 @@ A: [This document](https://docs.google.com/document/d/1JT1f2ClVdAnjrnby92V9ONBnN
 * [notjosh/sirius-client](https://github.com/notjosh/sirius-client) (notjosh's universal client for `sirius` — WIP)
 * [ktamas/sirius-client](https://github.com/ktamas/sirius-client) (KTamas' fork of the client — older, but works)
 * [tinyprinter/python-paperang](https://github.com/tinyprinter/python-paperang) (the python library that connects to the Paperang P1, with the protocol reverse-engineered)
+* [sirius-image-decoder](https://ls6.github.io/sirius-image-decoder/) (detailed exploration of decoding images coming from sirius-server, with working code)
 * [tinyprinter/tinyprinter.club](https://github.com/tinyprinter/tinyprinter.club) This website! Feel free to add more information to it and submit a PR! It's built with [hugo](http://gohugo.io/).
 
 ## Discussion/community
